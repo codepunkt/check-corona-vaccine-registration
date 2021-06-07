@@ -1,0 +1,17 @@
+name: Check corona vaccine registration
+
+on:
+  # can be triggered manually
+  workflow_dispatch:
+  # on a schedule every 5 minutes
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Take photo of github.com
+        uses: "lannonbr/puppeteer-screenshot-action@1.0.0"
+        with:
+          url: https://impfterminservice-kvwl.service-now.com/
