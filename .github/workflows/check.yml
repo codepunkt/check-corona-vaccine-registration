@@ -9,18 +9,16 @@ on:
 
 jobs:
   screenshot:
-    name: Screenshot
+    name: Commit
     runs-on: ubuntu-20.04
     steps:
-      - name: Screenshot Website
+      - name: Check out
+        uses: actions/checkout@v2
+      - name: Take screenshot
         uses: swinton/screenshot-website@v1.x
         with:
           source: https://impfterminservice-kvwl.service-now.com/
           destination: screenshot.png
-  commit:
-    name: Commit
-    runs-on: ubuntu-20.04
-    steps:
       - name: Commit screenshot
         run: |-
           git add .
