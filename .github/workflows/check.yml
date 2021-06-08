@@ -26,7 +26,5 @@ jobs:
       - name: Commit screenshot
         run: |-
           git add .
-          git config --global user.email "christoph@codepunkt.de"
-          git config --global user.name "Christoph Werner"
           git commit -am "chore: screenshot" || exit 0
           git push
