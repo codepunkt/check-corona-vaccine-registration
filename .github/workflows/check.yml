@@ -9,7 +9,7 @@ on:
 
 jobs:
   screenshot:
-    name: Commit
+    name: Check for updates
     runs-on: ubuntu-20.04
     steps:
       - name: Check out
@@ -30,6 +30,9 @@ jobs:
             
       - name: Install NPM dependencies
         run: npm ci
+        
+      - name: Compare HTML
+        run: npm run start
 
       - name: Take screenshot
         uses: swinton/screenshot-website@v1.x
