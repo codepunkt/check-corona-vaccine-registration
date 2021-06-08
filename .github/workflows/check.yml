@@ -19,6 +19,10 @@ jobs:
         with:
           source: https://impfterminservice-kvwl.service-now.com/
           destination: screenshot.png
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: screenshot.png
       - name: Commit screenshot
         run: |-
           git add .
