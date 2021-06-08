@@ -22,7 +22,7 @@ jobs:
       - name: Download a single artifact
         uses: actions/download-artifact@v2
         with:
-          name: screenshot.png
+          name: screenshot
       - name: Commit screenshot
         run: |-
           git add .
