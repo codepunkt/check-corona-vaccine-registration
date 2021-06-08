@@ -61,7 +61,7 @@ jobs:
         with:
           fromPhoneNumber: '+12564140390'
           toPhoneNumber: ${{ secrets.TWILIO_TO_PHONE_NUMBER }}
-          message: 'Die Impfanmeldung-Webseite hat sich geändert'
+          message: 'Die Impfanmeldung-Webseite hat sich geändert https://raw.githubusercontent.com/codepunkt/check-corona-vaccine-registration/main/screenshot.png'
         env:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
