@@ -40,7 +40,8 @@ jobs:
       - name: Take screenshot
         uses: swinton/screenshot-website@v1.x
         with:
-          source: https://impfterminservice-kvwl.service-now.com/
+          source: https://codepunkt.de/
+          # source: https://impfterminservice-kvwl.service-now.com/
           destination: screenshot.png
           
       - name: Download screenshot artifact
