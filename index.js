@@ -13,6 +13,6 @@ const fs = require('fs/promises');
       await fs.writeFile('current.html', currentBody);
     }
   } catch (error) {
-    console.log(error.response.body);
+    console.error(error, error.message);
   }
 })();
