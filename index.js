@@ -2,8 +2,8 @@ const got = require('got');
 const fs = require('fs/promises');
 
 const cacheFile = 'content.html';
-// const siteToCheck = 'https://impfterminservice-kvwl.service-now.com/'
-const siteToCheck = 'https://codepunkt.de/'
+// const siteToCheck = 'https://impfterminservice-kvwl.service-now.com/';
+const siteToCheck = 'https://codepunkt.de/';
 
 (async () => {
   try {
