@@ -66,3 +66,14 @@ jobs:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
           TWILIO_API_SECRET: ${{ secrets.TWILIO_API_SECRET }}
+
+      - name: Send SMS notification
+        uses: twilio-labs/actions-sms@v1
+        with:
+          fromPhoneNumber: '+12564140390'
+          toPhoneNumber: ${{ secrets.TWILIO_TO_PHONE_NUMBER_2 }}
+          message: 'Die Impfanmeldung-Webseite hat sich geändert https://raw.githubusercontent.com/codepunkt/check-corona-vaccine-registration/main/screenshot.png'
+        env:
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
+          TWILIO_API_SECRET: ${{ secrets.TWILIO_API_SECRET }}
