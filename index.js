@@ -10,6 +10,7 @@ const cacheFile = 'content.html';
     const previousBody = await fs.readFile(cacheFile, 'utf-8');
 
     if (currentBody === previousBody) {
+      console.log('nothing changed');
       process.exit(1);
     } else {
       await fs.writeFile(cacheFile, currentBody);
