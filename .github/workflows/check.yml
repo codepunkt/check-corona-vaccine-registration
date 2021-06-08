@@ -14,15 +14,34 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v2
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Configure NPM caching
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            npm-
+            
+      - name: Install NPM dependencies
+        run: npm ci
+
       - name: Take screenshot
         uses: swinton/screenshot-website@v1.x
         with:
           source: https://impfterminservice-kvwl.service-now.com/
           destination: screenshot.png
-      - name: Download a single artifact
+          
+      - name: Download screenshot artifact
         uses: actions/download-artifact@v2
         with:
           name: screenshot
+          
       - name: Commit screenshot
         run: |-
           git add .
